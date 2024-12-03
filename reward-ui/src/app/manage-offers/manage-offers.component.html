@@ -1,0 +1,55 @@
+
+<div class="form-container">
+    <label for="businessSelect">Select Business:</label>
+    <select id="businessSelect" formControlName="business_id" (change)="onBusinessChange($event)">
+      <option *ngFor="let business of businesses" [value]="business.business_id">
+        {{ business.business_name }}
+      </option>
+    </select>
+  </div>
+  
+<div class="form-container">
+    <h2>Create a New Offer</h2>
+    <form [formGroup]="offerForm" (ngSubmit)="onOfferSubmit()">
+      <!-- <div class="form-group">
+        <label for="businessSelect">Select Business:</label>
+        <select id="businessSelect" formControlName="businessId">
+          <option *ngFor="let business of businesses" [value]="business.business_id">
+            {{ business.business_name }}
+          </option>
+        </select>
+      </div> -->
+      <div class="form-group">
+        <label for="offerName">Offer Name:</label>
+        <input id="offerName" formControlName="offer_name" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      
+  
+      <div class="form-group">
+        <label for="offerTypeSelect">Select Offer Type:</label>
+        <select id="offerTypeSelect" formControlName="offer_type_id">
+          <option value="">Select an offer type</option>
+          <option *ngFor="let offerType of offerTypes" [value]="offerType.offer_type_id">
+            {{ offerType.offer_type_name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="visitThreshold">Visit Threshold:</label>
+        <input id="visitThreshold" formControlName="visit_threshold" type="number" />
+      </div>
+      <div class="form-group">
+        <label for="discountPercentage">Discount Percentage:</label>
+        <input id="discountPercentage" formControlName="discountPercentage" type="number" />
+      </div>
+      <div class="form-group">
+        <label for="validUntil">Valid Until:</label>
+        <input id="validUntil" formControlName="validUntil" type="date" />
+      </div>
+      <button type="submit">Create Offer</button>
+    </form>
+  </div>

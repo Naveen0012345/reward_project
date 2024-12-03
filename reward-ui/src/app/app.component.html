@@ -1,0 +1,24 @@
+<!-- app.component.html -->
+<header class="banner">
+  <h1>Reward Tracker</h1>
+</header>
+
+<div class="layout">
+  <!-- Left Panel -->
+  <aside class="side-panel">
+    <ul>
+      <li *ngIf="!(isAuthenticated | async)"><a routerLink="/login">Login</a></li>
+      <li *ngIf="!(isAuthenticated | async)"><a routerLink="/register">Register</a></li>
+      <li *ngIf="(isAuthenticated | async)"><a routerLink="/profile">Profile</a></li>
+      <li *ngIf="(isAuthenticated | async)"><a (click)="logout()">Logout</a></li>
+      <li *ngIf="(isAuthenticated | async)"><a routerLink="/business">Business</a></li>
+      <li *ngIf="(isAuthenticated | async)"><a routerLink="/offers">Offers</a></li>
+      <li *ngIf="(isAuthenticated | async)"><a routerLink="/manage-offers">Create New Offers</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

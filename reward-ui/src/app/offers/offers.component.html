@@ -1,0 +1,39 @@
+<!-- Business Selection -->
+<div class="form-container">
+    <label for="businessSelect">Select Business:</label>
+    <select id="businessSelect" formControlName="business_id" (change)="onBusinessChange($event)">
+      <option *ngFor="let business of businesses" [value]="business.business_id">
+        {{ business.business_name }}
+      </option>
+    </select>
+  </div>
+  
+  <div class="offer-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Offer Name</th>
+          <th>Description</th>
+          <th>Visit Threshold</th>
+          <th>Offer Type</th>
+          <th>QR Code</th> <!-- New Column for QR Code -->
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let offer of offers">
+          <td>{{ offer.offer_name }}</td>
+          <td>{{ offer.description }}</td>
+          <td>{{ offer.visit_threshold }}</td>
+          <td>{{ offer.offer_type_id }}</td>
+          <td>
+            <img *ngIf="offer.qr_code" [src]="'data:image/png;base64,' + offer.qr_code" alt="QR Code" width="50" height="50" />
+          </td>
+          <td>
+            <button (click)="deleteOffer(offer.offer_id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,71 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js build and output
+dist/
+build/
+tmp/
+temp/
+
+# Logs
+logs
+*.log
+logs/**/*.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE or editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Angular build artifacts
+out-tsc/
+.angular/
+.angular-cache/
+
+# Environment files (Angular)
+src/environments/environment*.ts
+
+# TypeScript specific
+*.tsbuildinfo
+
+# Angular and compiled JavaScript/CSS files
+*.js.map
+*.css.map
+
+# Mac system files
+.DS_Store
+
+# Temporary files
+.sass-cache/
+connect.lock
+
+# Test coverage and results
+coverage/
+karma-coverage/
+karma-results/
+
+# Dependency directories for frontend tools (if any)
+jspm_packages/
+bower_components/
+
+# Miscellaneous
+.sass-cache/
+.typings/
+bower_components/
+.lock-wscript
+build/Release
+
+# Optional npm cache directory
+.npm/
+

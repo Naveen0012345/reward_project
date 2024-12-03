@@ -1,0 +1,41 @@
+<!-- register.component.html -->
+<div class="auth-container">
+    <mat-card>
+      <h2>Register</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="auth-form">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" type="text" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" type="text" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phone" type="tel" required>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid" class="submit-button">
+          Register
+        </button>
+      </form>
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </mat-card>
+    <!-- Display the success message -->
+  <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+  

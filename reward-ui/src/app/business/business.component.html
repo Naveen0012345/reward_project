@@ -1,0 +1,113 @@
+<div class="form-container">
+    <!-- Business Form Section -->
+    <div class="business-form">
+      <h2 (click)="toggleBusinessSection()">
+        Business Details
+        <span [class.expanded]="isBusinessSectionExpanded">[{{ isBusinessSectionExpanded ? '-' : '+' }}]</span>
+      </h2>
+      <div *ngIf="isBusinessSectionExpanded">
+        <form [formGroup]="businessForm" (ngSubmit)="onBusinessSubmit()">
+          <div class="form-group">
+            <label for="name">Business Name:</label>
+            <input id="name" formControlName="name" />
+          </div>
+          <div class="form-group">
+            <label for="business_type">Business Type:</label>
+            <input id="business_type" formControlName="business_type" />
+          </div>
+          <button type="submit">Save Business</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Address Section -->
+<div class="address-section">
+    <h2 (click)="toggleAddressSection()">
+      Add Address Details
+      <span [class.expanded]="isAddressSectionExpanded">[{{ isAddressSectionExpanded ? '-' : '+' }}]</span>
+    </h2>
+    <div *ngIf="isAddressSectionExpanded">
+      <form [formGroup]="addressForm" (ngSubmit)="onAddressSubmit()">
+        <div class="form-group">
+          <label for="business">Select Business:</label>
+          <select id="business" formControlName="business_id" required>
+            <option value="">Select a business</option>
+            <option *ngFor="let business of businesses" [value]="business.business_id">{{ business.business_name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="address1">Address 1:</label>
+          <input id="address1" formControlName="address_line_1" />
+        </div>
+        <div class="form-group">
+          <label for="address2">Address 2:</label>
+          <input id="address2" formControlName="address_line_2" />
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input id="city" formControlName="city" />
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input id="state" formControlName="state" />
+        </div>
+        <div class="form-group">
+          <label for="postal_code">Postal Code:</label>
+          <input id="postal_code" formControlName="postal_code" />
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input id="country" formControlName="country" />
+        </div>
+        <button type="submit">Save Address</button>
+      </form>
+    </div>
+  </div>
+  
+  
+    <!-- Services Section -->
+    <div class="services-section">
+      <h2 (click)="toggleServicesSection()">
+        Services
+        <span [class.expanded]="isServicesSectionExpanded">[{{ isServicesSectionExpanded ? '-' : '+' }}]</span>
+      </h2>
+      <div *ngIf="isServicesSectionExpanded">
+        <div class="form-group">
+          <label for="businessSelect">Select Business:</label>
+          <select id="businessSelect" [(ngModel)]="selectedBusinessId">
+            <option *ngFor="let business of businesses" [value]="business.business_id">{{ business.business_name }}</option>
+          </select>
+        </div>
+        <form [formGroup]="serviceForm" (ngSubmit)="onServiceSubmit()">
+          <div class="form-group">
+            <label for="serviceName">Service Name:</label>
+            <input id="serviceName" formControlName="serviceName" />
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input id="price" formControlName="price" type="number" />
+          </div>
+          <button type="submit">{{ isEditMode ? 'Edit Service' : 'Add Service' }}</button>&nbsp;
+          <button type="button" (click)="onReset()">Reset</button>
+        </form>
+      </div>
+  
+      <!-- Existing Services Section -->
+      <div class="service-list">
+        <h3 (click)="toggleExistingServicesSection()">
+          Existing Services
+          <span [class.expanded]="isExistingServicesSectionExpanded">[{{ isExistingServicesSectionExpanded ? '-' : '+' }}]</span>
+        </h3>
+        <div *ngIf="isExistingServicesSectionExpanded">
+          <ul>
+            <li *ngFor="let service of services">
+              {{ service.service_name }} - ${{ service.price }}
+              <button (click)="editService(service)">Edit</button> 
+              <button (click)="deleteService(service.service_id)">Delete</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
