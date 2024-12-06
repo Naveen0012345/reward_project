@@ -22,6 +22,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { BusinessComponent } from './business/business.component';
 import { OffersComponent } from './offers/offers.component';
 import { ManageOffersComponent } from './manage-offers/manage-offers.component';
+import { CustomerInfoDropdownComponent } from './dashboard/customer-info-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ManageOffersComponent } from './manage-offers/manage-offers.component';
     RegisterComponent,
     BusinessComponent,
     OffersComponent,
-    ManageOffersComponent
+    ManageOffersComponent,
+    CustomerInfoDropdownComponent
   ],
   imports: [
     BrowserModule,
