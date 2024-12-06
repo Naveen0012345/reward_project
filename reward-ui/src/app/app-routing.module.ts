@@ -6,6 +6,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { BusinessComponent } from './business/business.component'; // Import BusinessComponent
 import { OffersComponent } from './offers/offers.component'; // Import BusinessComponent
 import { ManageOffersComponent } from './manage-offers/manage-offers.component'; 
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'business', component: BusinessComponent }, // Add route for business page
   { path: 'offers', component: OffersComponent }, // Add route for business page
   { path: 'manage-offers', component: ManageOffersComponent },
+  { path: 'dashboard', component: DashboardComponent}, //add route dashboard
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' } // Redirect any unknown routes to login
 ];

@@ -12,6 +12,7 @@
       <li *ngIf="(isAuthenticated | async)"><a routerLink="/profile">Profile</a></li>
       <li *ngIf="(isAuthenticated | async)"><a (click)="logout()">Logout</a></li>
       <li *ngIf="(isAuthenticated | async)"><a routerLink="/business">Business</a></li>
+      <li *ngIf="(isAuthenticated | async)"><a routerLink="/dashboard">Dashboard</a></li>
       <li *ngIf="(isAuthenticated | async)"><a routerLink="/offers">Offers</a></li>
       <li *ngIf="(isAuthenticated | async)"><a routerLink="/manage-offers">Create New Offers</a></li>
     </ul>

@@ -1,0 +1,32 @@
+.customer-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .status {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .dropdown-container {
+    width: 80%;
+    max-width: 300px;
+    margin-top: 20px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
